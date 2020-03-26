@@ -1,0 +1,35 @@
+<!--Serve para mandar o conteudo para o layout.html-->
+{% extends "layout.html" %}
+
+<!--Criacao de variavel que será mandada ao layout para estilizar-->
+{% set bodyId = "page-ideias" %}
+
+<!-- Este bloco será enviado para resolver a distinção de titles-->
+{% block title %}
+<title>Ideias - Casa Criativa</title>
+{% endblock title %}
+
+
+<!--Este é o bloco que será enviado-->
+{% block content %}
+<header>
+    <a href="/">
+        <img src="logo.png" alt="Imagem da logomarca" />
+    </a>
+    <nav>
+        <li><a href="/">Início</a></li>
+        <li><a href="#" onclick="onOff()" class="button">Nova Ideia</a></li>
+    </nav>
+</header>
+<section id="title">
+    <p>em exibição</p>
+    <h1>Ideias</h1>
+</section>
+<main>
+    <section id="ideias">
+        {% include "list-ideias.html"%}
+    </section>
+</main>
+{% include "footer.html" %}
+<!--Este é o conteudo que será enviado-->
+{% endblock %}
